@@ -1,0 +1,5 @@
+sudo apt install python-3 pip
+sudo pip3 install awscli
+aws --version
+aws configure  …. Needs private and secret key donnloaded from AWS
+aws s3 ls

@@ -1,0 +1,33 @@
+ami-43a15f3e
+sg-3dfcd04b
+subnet-cbee92af
+Essentials_Key.pem
+aws_access_key_id = your_key
+aws_secret_access_key = your_key
+
+
+aws ec2 run-instances --image-id ami-43a15f3e --count 1 --instance-type m4.large --key-name Essentials_Key --security-group-ids sg-3dfcd04b --subnet-id subnet-cbee92af --user-data file://my_userdata.txt
+
+
+aws ec2 describe-instances
+
+
+http://ec2-52-91-244-174.compute-1.amazonaws.com:8888/?token=95fad9eefde2d6171ae7b24b7d9aeed40c6bf17f3dd9f6e5
+
+
+
+
+
+
+
+
+"InstanceId": "i-046041625e55647f2"
+
+
+aws ec2 terminate-instances --instance-ids "i-046041625e55647f2"
+
+
+sudo apt install python3-pip
+sudo pip3 install awscli
+aws --version
+aws configure
