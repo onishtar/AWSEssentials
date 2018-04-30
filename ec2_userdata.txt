@@ -1,0 +1,29 @@
+#!/bin/bash
+apt-get update
+apt-get upgrade -y
+apt-get install default-jre scala -y
+apt-get install apache2 -y
+apt install python3-pip -y
+cd /home/ubuntu
+wget  https://raw.githubusercontent.com/briangriner/notebooks/master/decoding_health-DRAFT-1.30.18.ipynb
+wget https://raw.githubusercontent.com/briangriner/notebooks/master/TimeSeriesForecasting_using_LSTMs_presentation_Tigerlabs-4-1.6.18-ec2_demo.ipynb
+wget https://raw.githubusercontent.com/briangriner/notebooks/master/pima-indians-diabetes.data.csv
+wget https://raw.githubusercontent.com/briangriner/notebooks/master/skin_imp_data.csv
+wget https://raw.githubusercontent.com/briangriner/notebooks/master/skin_ln_imp_data.csv
+wget https://raw.githubusercontent.com/briangriner/notebooks/master/Month-shampooSales.csv
+wget https://raw.githubusercontent.com/briangriner/notebooks/master/experiment_stateful.csv
+wget http://archive.apache.org/dist/spark/spark-2.1.1/spark-2.1.1-bin-hadoop2.7.tgz
+chmod 777 skin_imp_data.csv
+tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz
+mkdir .jupyter
+cd .jupyter
+touch jupyter_notebook_config.py
+chmod 777 jupyter_notebook_config.py
+echo c = get_config\(\) >> /home/ubuntu/.jupyter/jupyter_notebook_config.py
+echo c.NotebookApp.ip = \'\*\' >> /home/ubuntu/.jupyter/jupyter_notebook_config.py
+echo c.NotebookApp.port = 8888 >>  /home/ubuntu/.jupyter/jupyter_notebook_config.py
+chmod 777 /var/www/html
+mv /var/www/html/index.html /var/www/html/index_back.html
+echo Hello from your name >> /var/www/html/index.html
+pip3 install py4j findspark pandas scikit-learn matplotlib jupyter keras tensorflow
+pip3 install xgboost
