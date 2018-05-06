@@ -26,4 +26,4 @@ chmod 777 /var/www/html
 mv /var/www/html/index.html /var/www/html/index_back.html
 echo Hello from your name >> /var/www/html/index.html
 pip3 install py4j findspark pandas scikit-learn matplotlib jupyter keras tensorflow
-pip3 install xgboost
+#pip3 install xgboost
