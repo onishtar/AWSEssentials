@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo yum update -y
+sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd git
+sudo service httpd start
+sudo chkconfig httpd on
+cd /var/www/html
+echo "<html><h1>My name is Omar</h1></html>" >> index.html
+echo "<h2>The public IP address of my EC2 is </h2>" >> index.html
+curl http://169.254.169.254/latest/meta-data/public-ipv4 >> index.html
+echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+cd /home/ec2-user
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+git clone https://github.com/onishtar/AWSEssentials.git
+sudo chown -hR ec2-user AWSEssentials/
