@@ -3,3 +3,4 @@ sudo pip3 install awscli
 aws --version
 aws configure  …. Needs private and secret key donnloaded from AWS
 aws s3 ls
+aws s3 cp --recursive s3://omartest1 /home/ec2-user --region us-east-1
