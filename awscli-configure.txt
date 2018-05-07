@@ -4,3 +4,5 @@ aws --version
 aws configure  …. Needs private and secret key donnloaded from AWS
 aws s3 ls
 aws s3 cp --recursive s3://omartest1 /home/ec2-user --region us-east-1
+aws s3 cp --recursive /home/ec2-user/AWSEssentials/ s3://omartest1/AWSEssentials
+aws s3 sync /home/ec2-user/AWSEssentials/ s3://omartest1/AWSEssentials
