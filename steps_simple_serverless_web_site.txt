@@ -1,0 +1,11 @@
+Steps Simple Serverless Web Site
+- Login into AWS
+- Create an S3 Bucket
+- Upload the html page and image to S3
+- Security - Create the S3 bucket policy
+- Security - Create the policy and role for Lambda
+- Create the Lambda function in python or any other language
+- Create the API gateway api link with Lambda
+- Deploy API to get an http endpoint
+- update the html page with reference to API endpoint
+- Test the html page
